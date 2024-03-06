@@ -17,13 +17,17 @@ const foodAndWinePairing = {
     "Calvados",
     "Champagne",
     `L'Amourvèdre, Domaine des Terres Promises`,
-  ]
+  ],
 };
 
-// Store the advice in an array
-let pairingAdvice = []
-
 //Iterate over the pool of advices
-for(let element in foodAndWinePairing) {
-    let optionIdx = generateRandomNumber(foodAndWinePairing[element].length)
+function foodAndWineRecommendation() {
+  for (let element in foodAndWinePairing) {
+    let optionIdx = generateRandomNumber(foodAndWinePairing[element].length);
+    let pairingAdvice = `I recommend pairing ${foodAndWinePairing[food][optionIdx]} with ${foodAndWinePairing[drink][optionIdx]}`;
+    console.log(pairingAdvice);
+    return pairingAdvice;
+  }
 }
+
+foodAndWineRecommendation();
