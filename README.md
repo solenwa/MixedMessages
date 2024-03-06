@@ -1,5 +1,4 @@
-##General Info
-
+## General info
 A food and wine pairing generator. Based on codecademy's "Mixed Message" Portfolio Project, as part of the Fullstack Path.
 
 ##Technologies
