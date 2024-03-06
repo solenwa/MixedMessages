@@ -20,14 +20,31 @@ const foodAndWinePairing = {
   ],
 };
 
-//Iterate over the pool of advices
 function foodAndWineRecommendation() {
+  // Array to store the future food and wine pairing
+  let recommendation = [];
+
   for (let element in foodAndWinePairing) {
+    // To generate a random index inside the options of food and wine
     let optionIdx = generateRandomNumber(foodAndWinePairing[element].length);
-    let pairingAdvice = `I recommend pairing ${foodAndWinePairing[food][optionIdx]} with ${foodAndWinePairing[drink][optionIdx]}`;
-    console.log(pairingAdvice);
-    return pairingAdvice;
+
+    switch (element) {
+      case "food":
+        recommendation.push(
+          `I recommend pairing ${foodAndWinePairing[element][optionIdx]}`
+        );
+        break;
+      case "drink":
+        recommendation.push(` with ${foodAndWinePairing[element][optionIdx]}.`);
+        break;
+      default:
+        recommendation.push(`An error occured.`);
+    }
   }
+
+  // To format the array into an easily readable message
+  const formatted = recommendation.join("");
+  return console.log(formatted);
 }
 
 foodAndWineRecommendation();
